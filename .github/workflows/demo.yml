@@ -6,9 +6,9 @@ on:
             -main
             -dev
     pull_request:
-        branches: [main,dev]
-    schedule:
-       - cron: "*/1 * * * *"
+        branches: [main, dev]
+    # schedule:
+    #    - cron: "*/1 * * * *"
 
 jobs: 
 
