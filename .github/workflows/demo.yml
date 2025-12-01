@@ -7,8 +7,8 @@ on:
             -dev
     pull_request:
         branches: [main, dev]
-    schedule:
-       - cron: "*/1 * * * *"
+    # schedule:
+    #    - cron: "*/1 * * * *"
 
 jobs: 
 
@@ -41,7 +41,7 @@ jobs:
         - uses: actions/download-artifact@v4
           with: 
             path: github_action.txt
-        - name: Display github-action.txt
+        - name: Display github_action.txt
           run: cat github_action.txt   
    deploy_job:
     needs: setup_job
