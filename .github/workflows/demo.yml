@@ -33,7 +33,6 @@ jobs:
    build_job:
     needs: 
        - setup_job
-       - deploy_job
 
     runs-on: windows-latest
     steps:
@@ -45,7 +44,10 @@ jobs:
         - name: Display github-action.txt
           run: cat github-action.txt   
    deploy_job:
-    needs: setup_job
+    needs: 
+      - setup_job
+      - build_job
+
     runs-on: macos-latest
     steps:
         - run: echo hello mac
