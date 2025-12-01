@@ -7,8 +7,8 @@ on:
             -dev
     pull_request:
         branches: [main, dev]
-    schedule:
-       - cron: "*/1 * * * *"
+    # schedule:
+    #    - cron: "*/1 * * * *"
 
 jobs: 
 
@@ -19,8 +19,8 @@ jobs:
           uses: actions/checkout@v4
         - name: create file
           run: |
-            touch github-action.txt
-            echo "from first job" > github-action.txt
+            touch github_action.txt
+            echo "from first job" > github_action.txt
             ls -la
             echo hello world
             cat README.md
@@ -28,7 +28,7 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
             name: my-file
-            path: github-action.txt
+            path: github_action.txt
    build_job:
     needs: 
        - setup_job
