@@ -40,9 +40,9 @@ jobs:
           run: echo hello
         - uses: actions/download-artifact@v4
           with: 
-            path: github-action.txt
+            path: github_action.txt
         - name: Display github-action.txt
-          run: cat github-action.txt   
+          run: cat github_action.txt   
    deploy_job:
     needs: setup_job
     runs-on: macos-latest
